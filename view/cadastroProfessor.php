@@ -14,18 +14,18 @@ require_once "../controller/funcoesCadastro.php";
 </head>
 <body>
     <header>
-        <img src="../img/logo-dog.jpg" alt="Logo da plataforma">
+        <a href="./home.php"><img src="../img/logo-dog.jpg" alt="Logo da plataforma"></a>
         <h1>CLASS UNITY</h1>
     </header>
     <section id="conteudo">
         <section id="caixa-do-formulario">
             <h2>Crie sua conta, professor</h2>
             <form method="POST" action="../controller/funcoesCadastro.php">
-                <input type="text" name="nome" id="" placeholder="Digite seu nome">
-                <input type="text" name="sobrenome" id="" placeholder="Digite seu sobrenome">
-                <input type="text" name="rp" id="" placeholder="Digite seu registro profissional (RP)">
-                <input type="email" name="email" id="" placeholder="Digite seu e-mail">
-                <input type="password" name="senha" id="" placeholder="Digite sua senha">
+                <input type="text" name="nome" placeholder="Digite seu nome">
+                <input type="text" name="sobrenome" placeholder="Digite seu sobrenome">
+                <input type="text" name="rp" placeholder="Digite seu registro profissional (RP)">
+                <input type="email" name="email" placeholder="Digite seu e-mail">
+                <input type="password" name="senha" placeholder="Digite sua senha">
                 <input type="submit" value="Cadastrar">
             </form>
         </section>

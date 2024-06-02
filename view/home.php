@@ -24,7 +24,7 @@
            <nav class="navegacao-principal">
                 <h1>BEM-VINDO !</h1>
                 <ol>
-                    <li><a href="#">Entrar</a></li>
+                    <li><a href="./login.php">Entrar</a></li>
                     <li><a href="./cadastroAluno.php">Inscreva-se como aluno</a></li>
                     <li><a href="./cadastroProfessor.php">Inscreva-se como professor</a></li>
                     <li><a href="#">Sobre nós</a></li>
