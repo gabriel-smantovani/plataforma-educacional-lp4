@@ -54,11 +54,17 @@ function login($registro, $senha) {
 
     $conexao = conectarBD();
     
-    $consulta = "SELECT * FROM professores, alunos WHERE (rp = '$registro' AND senha = '$senha') OR (ra = '$registro' AND senha = '$senha')";
+    $consulta = "SELECT * FROM professores, alunos WHERE (professores.rp = '$registro' AND professores.senha = '$senha') OR (alunos.ra = '$registro' AND alunos.senha = '$senha')";
     $usuario = mysqli_query($conexao, $consulta);
     
-    echo $usuario["nome"];
-    return $usuario;
+    $usuarioAuxiliar = mysqli_fetch_assoc($usuario);
+
+    if(($usuarioAuxiliar["nome"] == NULL) OR ($usuarioAuxiliar["nome"] == "")) {
+        return NULL;
+    }
+    else {
+        return $usuario;
+    }
 
 }
 
