@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../css/cadastroTurmas.css" rel="stylesheet" type="text/css">
+    <link href="../css/cadastroTurma.css" rel="stylesheet" type="text/css">
     <title>Cadastro Turma</title>
 </head>
 <body>
@@ -27,7 +27,10 @@
 
         <nav>
             <ul>
-                <li><a href="visualizarTurmas.php">Visualizar Turmas</a><li>
+                <li><a href="visualizarTurma.php">VISUALIZAR TURMA</a><li>
+                <li><a href="#">VISUALIZAR PROFESSORES</a><li>
+                <li><a href="#">VISUALIZAR ALUNOS</a><li>
+
             </ul>
         </nav>
 

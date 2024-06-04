@@ -50,7 +50,7 @@ if(!empty($_POST["codigoTurma"]) && !empty($_POST["nomeTurma"]) && !empty($_POST
 
     createTurma($codigoTurma, $nomeTurma, $modulo, $turnoTurma, $dataInicio, $dataTermino);
 
-    header('location:../view/cadastroTurmas.php');
+    header('location:../view/cadastroTurma.php');
     die();
 
 }
