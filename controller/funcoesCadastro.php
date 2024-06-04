@@ -36,6 +36,25 @@ if(!empty($_POST["nome"]) && !empty($_POST["sobrenome"]) && !empty($_POST["rp"])
 
 }
 
+# Turma
+
+if(!empty($_POST["codigoTurma"]) && !empty($_POST["nomeTurma"]) && !empty($_POST["modulo"]) && !empty($_POST["turnoTurma"]) && !empty($_POST["dataInicio"]) && 
+!empty($_POST["dataTermino"])) {
+
+    $codigoTurma = $_POST["codigoTurma"];
+    $nomeTurma = $_POST["nomeTurma"];
+    $modulo = $_POST["modulo"];
+    $turnoTurma = $_POST["turnoTurma"];
+    $dataInicio = $_POST["dataInicio"];
+    $dataTermino = $_POST["dataTermino"];
+
+    createTurma($codigoTurma, $nomeTurma, $modulo, $turnoTurma, $dataInicio, $dataTermino);
+
+    header('location:../view/cadastroTurmas.php');
+    die();
+
+}
+
 
 
 ?>

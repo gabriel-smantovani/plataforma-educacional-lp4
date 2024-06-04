@@ -8,7 +8,6 @@ function conectarBD() {
 
 }
 
-# Funções Aluno
 
 function createAluno($nome, $sobrenome, $ra, $email, $senha) {
 
@@ -66,6 +65,28 @@ function login($registro, $senha) {
         return $usuario;
     }
 
+} 
+
+# Funções Turma
+
+function createTurma($idTurma, $nomeTurma, $qntdModulos, $turnoTurma, $dataInicio, $dataTermino){
+
+    $conexao = conectarBD();
+    $inserir = "INSERT INTO turmas(codigo, nome, modulo, turno, data_inicio, data_termino)
+                VALUES ('$idTurma', '$nomeTurma', '$qntdModulos', '$turnoTurma', '$dataInicio', '$dataTermino')";
+
+    mysqli_query($conexao, $inserir);
+
+}
+
+function returnTurma(){
+
+    $conexao = conectarBD();
+    
+    $consulta = "SELECT * FROM turmas";
+    $listaTurmas = mysqli_query($conexao, $consulta);
+
+    return $listaTurmas;
 }
 
 ?>
