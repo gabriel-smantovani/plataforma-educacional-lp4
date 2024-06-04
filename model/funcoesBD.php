@@ -47,13 +47,13 @@ function returnProfessor($rp, $senha) {
 
 }
 
-# Login
+# Função Login Professor
 
-function login($registro, $senha) {
+function loginProfessor($rp, $senha) {
 
     $conexao = conectarBD();
     
-    $consulta = "SELECT * FROM professores, alunos WHERE (professores.rp = '$registro' AND professores.senha = '$senha') OR (alunos.ra = '$registro' AND alunos.senha = '$senha')";
+    $consulta = "SELECT * FROM professores WHERE (professores.rp = '$rp' AND professores.senha = '$senha')";
     $usuario = mysqli_query($conexao, $consulta);
     
     $usuarioAuxiliar = mysqli_fetch_assoc($usuario);
@@ -66,6 +66,27 @@ function login($registro, $senha) {
     }
 
 } 
+
+# Função Login Aluno
+
+function loginAluno($ra, $senha){
+
+    $conexao = conectarBD();
+
+    $consulta = "SELECT * FROM alunos WHERE (alunos.ra = '$ra' AND alunos.senha = '$senha')";
+    $usuario = mysqli_query($conexao, $consulta);
+
+    $usuarioAuxiliar = mysqli_fetch_assoc($usuario);
+
+    if(($usuarioAuxiliar["nome"] == NULL) OR ($usuarioAuxiliar["nome"] == "")){
+
+        return NULL;
+    }
+
+    else{
+        return $usuario;
+    }
+}
 
 # Funções Turma
 

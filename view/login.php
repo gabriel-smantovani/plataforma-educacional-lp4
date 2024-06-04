@@ -21,7 +21,8 @@ require_once "../controller/funcoesLogin.php";
         <section id="caixa-do-formulario">
             <h2>Acesse sua conta</h2>
             <form method="POST" action="../controller/funcoesLogin.php">
-                <input type="text" name="registro" placeholder="Digite seu registro (RA ou RP)">
+                <input type="text" name="ra" placeholder="Digite seu RA (Aluno)">
+                <input type="text" name="rp" placeholder="Digite seu RP (Professor)">
                 <input type="password" name="senha" placeholder="Digite sua senha">
                 <input type="submit" value="Entrar">
             </form>
