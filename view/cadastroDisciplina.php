@@ -3,6 +3,7 @@
     require_once "../controller/funcoesCadastro.php";
 
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -42,19 +43,11 @@
 
         <section id="caixa-do-formulario">
 
-            <h2>Cadastrar Turmas</h2>
+            <h2>Cadastrar Disciplinas</h2>
             <form method="POST" action="../controller/funcoesCadastro.php">
-
-                <input type="text" name="codigoTurma" placeholder="Código da turma">
-                <input type="text" name="nomeTurma" placeholder="Nome da turma">
-                <input type="text" name="modulo" placeholder="Módulo da turma">
-                <input type="text" name="turnoTurma" placeholder="Turno da turma">
-                <label for="dataInicio">Data de Início:</label>
-                <input type="date" name="dataInicio" required>
-                <label for="dataTermino">Data de Término:</label>
-                <input type="date" name="dataTermino" required>
+                <input type="text" name="nomeDisciplina" placeholder="Nome da Disciplina">
+                <input type="text" name="codigoTurma" placeholder="Código da Turma">
                 <input type="submit" value="Cadastrar">
-                
             </form>
 
         </section>

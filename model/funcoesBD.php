@@ -110,4 +110,30 @@ function returnTurma(){
     return $listaTurmas;
 }
 
+# Funções Disciplina
+
+function createDisciplina($nomeDisciplina, $codigoTurma){
+
+    $conexao = conectarBD();
+    
+    $inserir = "INSERT INTO disciplinas(nome, fk_turma_codigo)
+                VALUES('$nomeDisciplina', '$codigoTurma')";
+    
+    mysqli_query($conexao, $inserir);
+}
+
+function returnDisciplinas($codigoTurma){
+
+    $conexao = conectarBD();
+
+    $consulta = "SELECT * FROM disciplinas WHERE (fk_turma_codigo = '$codigoTurma')";
+
+    $listaDisciplinas = mysqli_query($conexao, $consulta);
+
+    return $listaDisciplinas;
+
+
+
+}
+
 ?>

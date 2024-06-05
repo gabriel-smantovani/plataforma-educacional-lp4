@@ -24,6 +24,20 @@ require_once "../model/funcoesBD.php";
         </section>
     </header>
 
+    <section id="sessao-nav">
+
+        <nav>
+            <ul>
+                <li><a href="cadastroTurma.php">CADASTRAR TURMAS</a><li>
+                <li><a href="cadastroDisciplina.php">CADASTRAR DISCIPLINAS</a><li>
+                <li><a href="visualizarTurma.php">VISUALIZAR TURMAS</a><li>
+                <li><a href="#">VISUALIZAR PROFESSORES</a><li>
+                <li><a href="#">VISUALIZAR ALUNOS</a><li>
+            </ul>
+        </nav>
+
+    </section>
+
     <main>
         <h1>Turmas Cadastradas</h1>
 
@@ -35,25 +49,37 @@ require_once "../model/funcoesBD.php";
                 <th>Turno</th>
                 <th>Data de Início</th>
                 <th>Data de Término</th>
+                <th>Disciplinas</th>
             </tr>
             <?php 
 
                 $listaTurmas = returnTurma();
                 
-                while ($turma = mysqli_fetch_assoc($listaTurmas)) {
-                    echo "<tr>";
-                    echo "<td>" . $turma['codigo'] . "</td>";
-                    echo "<td>" . $turma['nome'] . "</td>";
-                    echo "<td>" . $turma['modulo'] . "</td>";
-                    echo "<td>" . $turma['turno'] . "</td>";
-                    echo "<td>" . $turma['data_inicio'] . "</td>";
-                    echo "<td>" . $turma['data_termino'] . "</td>";
-                    echo "</tr>";
+                if($listaTurmas && mysqli_num_rows($listaTurmas) > 0){
+
+                    while ($turma = mysqli_fetch_assoc($listaTurmas)) {
+                        echo "<tr>";
+                        echo "<td>" . $turma['codigo'] . "</td>";
+                        echo "<td>" . $turma['nome'] . "</td>";
+                        echo "<td>" . $turma['modulo'] . "</td>";
+                        echo "<td>" . $turma['turno'] . "</td>";
+                        echo "<td>" . $turma['data_inicio'] . "</td>";
+                        echo "<td>" . $turma['data_termino'] . "</td>";
+                        echo "<td>
+                        <form method='POST' action='disciplinas.php'>
+                            <input type='hidden' name='codigo' value='" . $turma['codigo'] . "'>
+                            <button type='submit'>Ver Disciplinas</button>
+                        </form>
+                        </td>";
+                        echo "</tr>";
+                    }
                 }
-        
+                else{
+                    
+                    echo "<tr><td colspan='7'>Nenhuma turma cadastrada.</td></tr>";
+                }
             ?>
         </table>
-        <p><a href="cadastroTurma.php">Voltar</a><p>
     </main>
 
     <footer style="position: fixed; bottom: 0;">

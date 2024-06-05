@@ -55,6 +55,19 @@ if(!empty($_POST["codigoTurma"]) && !empty($_POST["nomeTurma"]) && !empty($_POST
 
 }
 
+# Disciplina
+
+if(!empty($_POST["nomeDisciplina"]) && !empty($_POST["codigoTurma"])){
+
+    $nomeTurma = $_POST["nomeDisciplina"];
+    $codigoTurma = $_POST["codigoTurma"];
+
+    createDisciplina($nomeTurma, $codigoTurma);
+    
+    header("Location: ../view/cadastroDisciplina.php");
+    die();
+}
+
 
 
 ?>

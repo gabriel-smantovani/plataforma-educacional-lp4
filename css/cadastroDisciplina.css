@@ -40,6 +40,7 @@ header {
     color: white;
 }
 
+
 #sessao-nav {
     background-color: #333;
     width: 100%;
@@ -70,34 +71,72 @@ header {
     background-color: #575757;
 }
 
+
 main {
-    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
 }
 
-h1{
-
-    margin-bottom: 12px;
+#sessao-cadastro-turma {
+    background-color: rgba(210, 210, 210, 0.8);
+    border: 1px solid black;
+    padding: 25px;
+    border-radius: 20px;
 }
-table {
-    width: 100%;
-    border-collapse: collapse;
+
+#caixa-do-formulario {
+    width: 500px;
+    height: auto;
+    text-align: center;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+h2 {
     margin-bottom: 20px;
 }
 
-table, th, td {
-    border: 1px solid #ddd;
-    background-color: #f2f2f2;
-}
-th, td {
-    padding: 10px;
-    text-align: left;
-}
-th {
-    background-color: rgb(41, 42, 62);;
-    color: white;
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+form input[type="text"], form input[type="date"] {
+    width: 490px;
+    height: 40px;
+    margin: 10px;
+    border: none;
+    border-radius: 12px;
+    border-bottom: solid 1px rgb(41, 42, 62);
+    border-right: solid 1px rgb(41, 42, 62);
+    background-color: rgba(255, 255, 255, 0.5);
+}
 
+form input[type="submit"] {
+    width: 300px;
+    height: 3em;
+    background-color: rgb(41, 42, 62);
+    margin-top: 15px;
+    font-size: 1em;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+form input[type="text"]:focus, form input[type="date"]:focus {
+    border-right: solid 2px rgb(41, 42, 62);
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+form label {
+    font-weight: bold;
+}
 
 footer {
     display: flex;
