@@ -62,10 +62,11 @@ function loginProfessor($rp, $senha) {
         return NULL;
     }
     else {
-        return $usuario;
+        return $usuarioAuxiliar;
     }
 
-} 
+}
+
 
 # Função Login Aluno
 
@@ -84,7 +85,7 @@ function loginAluno($ra, $senha){
     }
 
     else{
-        return $usuario;
+        return $usuarioAuxiliar; 
     }
 }
 
@@ -131,9 +132,19 @@ function returnDisciplinas($codigoTurma){
     $listaDisciplinas = mysqli_query($conexao, $consulta);
 
     return $listaDisciplinas;
+}
 
+# Retornar Turma do aluno
 
+function returnTurmaAluno($ra){
 
+    $conexao = conectarBD();
+    $consulta = "SELECT t.* FROM turmas t
+            JOIN alunos a ON t.codigo = a.fk_codigo_turma
+            WHERE a.ra = $ra";
+    $result = mysqli_query($conexao, $consulta);
+
+    return $result;
 }
 
 ?>

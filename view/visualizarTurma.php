@@ -23,7 +23,7 @@ require_once "../model/funcoesBD.php";
             </section>
         </section>
     </header>
-
+    
     <section id="sessao-nav">
 
         <nav>

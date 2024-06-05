@@ -31,9 +31,11 @@ if(!empty($_POST["rp"]) && !empty($_POST["senha"])){
     $usuario = loginProfessor($rp, $senha);
 
     if ($usuario != NULL) {
+        
+        session_start();
         $_SESSION["usuario"] = $usuario;
         
-        header('Location: ../view/cadastroTurma.php');
+        header('Location: ../view/homeProfessor.php');
         die();
 
     } else {
@@ -52,9 +54,11 @@ if(!empty($_POST["ra"]) && !empty($_POST["senha"])){
     $usuario = loginAluno($ra, $senha);
     
     if($usuario != NULL){
+
+        session_start();
         $_SESSION["usuario"] = $usuario;
     
-        header("Location: ../view/turmas.php");
+        header("Location: ../view/homeAluno.php");
         die();
     }   
     else{
@@ -64,8 +68,5 @@ if(!empty($_POST["ra"]) && !empty($_POST["senha"])){
     }
     
     }
-
-?>
-
 
 ?>
