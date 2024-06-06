@@ -20,7 +20,7 @@ $usuario = $_SESSION["usuario"];
                 <img src="../img/logo-dog.jpg">
             </section>
             <section id="nome-site">
-                <h1>CLASS UNITY</h1>
+                <h1><a href="./home.php">CLASS UNITY</a></h1>
             </section>
         </section>
     </header>

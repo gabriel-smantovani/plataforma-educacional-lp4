@@ -25,6 +25,11 @@ header {
     background-color: rgb(41, 42, 62);
 }
 
+header a {
+    text-decoration: none;
+    color: white;
+}
+
 header img {
     width: 3em;
     height: 3em;
