@@ -15,7 +15,7 @@ require_once "../controller/funcoesLogin.php";
 <body>
     <header>
         <a href="./home.php"><img src="../img/logo-dog.jpg" alt="Logo da plataforma"></a>
-        <h1>CLASS UNITY</h1>
+            <h1><a href="./home.php">CLASS UNITY</a></h1>
     </header>
     <section id="conteudo">
         <section id="caixa-do-formulario">

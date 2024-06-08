@@ -17,6 +17,11 @@ header {
     height: auto;
 }
 
+header a {
+    text-decoration: none;
+    color: white;
+}
+
 #cabecalho {
     display: flex;
     justify-content: space-between;
